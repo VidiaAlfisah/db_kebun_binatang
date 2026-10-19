@@ -1,0 +1,323 @@
+/* RESET & BASE STYLE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #334155;
+}
+
+/* LAYOUT UTAMA */
+.wrap {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* 1. SIDEBAR KIRI */
+.sidebar {
+    width: 240px;
+    background-color: #0284c7;
+    color: #ffffff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.brand {
+    padding: 0 20px 25px 20px;
+}
+
+.brand h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.menu-vertikal ul {
+    list-style: none;
+}
+
+.menu-vertikal ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.menu-vertikal ul li a:hover {
+    background-color: #0369a1;
+}
+
+.menu-vertikal ul li a.btn-logout {
+    margin-top: 10px;
+    background-color: #0284c7;
+    border-radius: 8px;
+    margin: 10px 10px 0 10px;
+}
+
+.menu-vertikal ul li a.btn-logout:hover {
+    background-color: #0369a1;
+}
+
+/* 2. AREA KONTEN KANAN */
+.konten-utama {
+    flex-grow: 1;
+    padding: 25px;
+    overflow-y: auto;
+    max-width: calc(100vw - 240px);
+}
+
+/* BANNER HEADER BIRU ATAS */
+.header-konten {
+    background-color: #0284c7;
+    color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+}
+
+.header-konten h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.header-konten p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* CONTAINER UTAMA */
+.conteudo {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* 3. TAMPILAN DASHBOARD SELAMAT DATANG */
+.welcome-hero {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    border-radius: 14px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    border: 1px solid #7dd3fc;
+}
+
+.welcome-hero h2 {
+    color: #0369a1;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.welcome-hero p {
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.welcome-badge-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.welcome-badge {
+    background-color: #ffffff;
+    color: #0284c7;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* GRID KARTU STATISTIK (DIBUAT KOTAK KOTAK TERPISAH) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: #0284c7;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #e0f2fe;
+    color: #0284c7;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.stat-info h4 {
+    font-size: 14px;
+    color: #0284c7;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.stat-info p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* 4. TAMPILAN TABEL DATA */
+.conteudo table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #0284c7;
+}
+
+.conteudo th {
+    background-color: #0284c7;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.conteudo td {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* TOMBOL AKSI MEMBULAT */
+.conteudo a.btn-edit, 
+.conteudo table a[href*="edit"],
+.conteudo a.btn-hapus, 
+.conteudo table a[href*="hapus"],
+.conteudo a[href*="tambah"], 
+.btn-tambah {
+    display: inline-block;
+    background-color: #0284c7;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2px;
+}
+
+/* 5. FORM EDIT & TAMBAH */
+.conteudo form table {
+    border: none !important;
+}
+
+.conteudo form table td {
+    border: none !important;
+    text-align: left !important;
+    padding: 10px 12px;
+}
+
+.conteudo input[type="text"],
+.conteudo input[type="date"],
+.conteudo input[type="number"],
+.conteudo select,
+.conteudo textarea {
+    width: 100%;
+    max-width: 450px;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.conteudo input:focus,
+.conteudo select:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.conteudo input[type="submit"],
+.conteudo button[type="submit"] {
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* MENGUBAH POP-UP MODAL JADI LEBIH BESAR */
+
+/* 1. Memperluas Kotak Modal Modal */
+.modal-content, 
+div[id*="modal"] > div,
+.modal-dialog {
+    width: 90% !important;
+    max-width: 600px !important; /* Membuat kotak pop-up lebih lebar */
+    padding: 25px !important;
+    border-radius: 16px !important;
+}
+
+/* 2. Memperbesar Gambar di Dalam Pop-up */
+.modal-content img, 
+div[id*="modal"] img,
+.modal img {
+    width: 100% !important;
+    max-width: 380px !important; /* Ukuran gambar diperbesar */
+    height: 250px !important; /* Tinggi gambar disesuaikan */
+    object-fit: cover !important;
+    border-radius: 12px !important; /* Mengubah lingkaran jadi kotak membulat rapi */
+    margin: 15px auto !important;
+    display: block !important;
+    border: 3px solid #0284c7 !important; /* Aksen border biru */
+}
+
+/* 3. Merapikan Judul & Teks Detail */
+.modal-content h3, .modal-content h2 {
+    font-size: 22px !important;
+    color: #0369a1 !important;
+    margin-top: 10px !important;
+}
+
+.modal-content p {
+    font-size: 15px !important;
+    color: #334155 !important;
+    line-height: 1.6 !important;
+}
